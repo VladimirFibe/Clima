@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1F26CCB027BFCC7600BC0A4D /* ClimaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */; };
-		1F26CCB227BFCC7600BC0A4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCB127BFCC7600BC0A4D /* ContentView.swift */; };
 		1F26CCB427BFCC7800BC0A4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */; };
 		1F26CCB727BFCC7800BC0A4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */; };
+		1F26CCBE27BFCD7600BC0A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */; };
+		1F26CCC027BFCDB300BC0A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCBF27BFCDB300BC0A4D /* SceneDelegate.swift */; };
+		1F26CCC227BFCDC200BC0A4D /* ClimaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCC127BFCDC200BC0A4D /* ClimaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F26CCAC27BFCC7600BC0A4D /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaApp.swift; sourceTree = "<group>"; };
-		1F26CCB127BFCC7600BC0A4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F26CCBF27BFCDB300BC0A4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F26CCC127BFCDC200BC0A4D /* ClimaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaViewController.swift; sourceTree = "<group>"; };
+		1F26CCC327BFCE3300BC0A4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,11 @@
 		1F26CCAE27BFCC7600BC0A4D /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				1F26CCC327BFCE3300BC0A4D /* Info.plist */,
 				1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */,
-				1F26CCB127BFCC7600BC0A4D /* ContentView.swift */,
+				1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */,
+				1F26CCBF27BFCDB300BC0A4D /* SceneDelegate.swift */,
+				1F26CCC127BFCDC200BC0A4D /* ClimaViewController.swift */,
 				1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */,
 				1F26CCB527BFCC7800BC0A4D /* Preview Content */,
 			);
@@ -137,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F26CCB227BFCC7600BC0A4D /* ContentView.swift in Sources */,
+				1F26CCBE27BFCD7600BC0A4D /* AppDelegate.swift in Sources */,
+				1F26CCC227BFCDC200BC0A4D /* ClimaViewController.swift in Sources */,
 				1F26CCB027BFCC7600BC0A4D /* ClimaApp.swift in Sources */,
+				1F26CCC027BFCDB300BC0A4D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +282,7 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Clima/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +312,7 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Clima/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
