@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ClimaViewController: UIViewController {
-  let c = "21°C"
+  var weatherManager = WeatherManager()
+  let locationManager = CLLocationManager()
+  
   let backgroundView = UIImageView(image: UIImage(named: "background"))
   let locationButton: UIButton = {
     let button = UIButton(type: .system)
@@ -16,6 +19,7 @@ class ClimaViewController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.widthAnchor.constraint(equalToConstant: 40).isActive = true
     button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    button.addTarget(self, action: #selector(locationPressed), for: .touchUpInside)
     return button
   }()
   
@@ -26,6 +30,7 @@ class ClimaViewController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.widthAnchor.constraint(equalToConstant: 40).isActive = true
     button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    button.addTarget(self, action: #selector(searchPressed), for: .touchUpInside)
     return button
   }()
   
@@ -33,6 +38,8 @@ class ClimaViewController: UIViewController {
     let text = UITextField()
     text.placeholder = "Search"
     text.textAlignment = .right
+    text.autocapitalizationType = .words
+    text.returnKeyType = .go
     text.font = .systemFont(ofSize: 25)
     text.backgroundColor = .systemFill
     text.borderStyle = .roundedRect
@@ -41,12 +48,15 @@ class ClimaViewController: UIViewController {
   
   let conditionImageView: UIImageView = {
     let imageview = UIImageView(image: UIImage(systemName: "cloud", withConfiguration: UIImage.SymbolConfiguration(pointSize: 120)))
+    imageview.tintColor = UIColor(named: "wheatherColor")
     return imageview
   }()
   
   let temperatureLabel: UILabel = {
     let label = UILabel()
+    label.text = "21°C"
     label.font = .systemFont(ofSize: 80, weight: .bold)
+    label.textColor = UIColor(named: "wheatherColor")
     return label
   }()
   
@@ -54,13 +64,19 @@ class ClimaViewController: UIViewController {
     let label = UILabel()
     label.text = "London"
     label.font = .systemFont(ofSize: 30)
+    label.textColor = UIColor(named: "wheatherColor")
     return label
   }()
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    searchField.delegate = self
+    weatherManager.delegate = self
     conditionImageView.image = UIImage(systemName: "sun.max", withConfiguration: UIImage.SymbolConfiguration(pointSize: 120))
-    temperatureLabel.text = c
+    
+    locationManager.delegate = self
+    locationManager.requestWhenInUseAuthorization()
+    locationManager.requestLocation()
   }
   func setupUI() {
     view.addSubview(backgroundView)
@@ -96,5 +112,74 @@ class ClimaViewController: UIViewController {
     stack.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
     searchStack.leadingAnchor.constraint(equalTo: stack.leadingAnchor).isActive = true
     searchStack.trailingAnchor.constraint(equalTo: stack.trailingAnchor).isActive = true
+  }
+  
+  @objc func searchPressed(_ sender: UIButton) {
+    searchField.endEditing(true)
+  }
+  
+  @objc func locationPressed(_ sender: UIButton) {
+    locationManager.requestLocation()
+  }
+}
+  
+  // MARK: - UITextFiledDelegate
+
+extension ClimaViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    searchField.endEditing(true)
+    print("hide keyboard and launch search")
+    
+    return true
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    cityLabel.text = searchField.text
+    if let city = searchField.text {
+      weatherManager.fetchWeather(cityName: city)
+    }
+    searchField.text = ""
+  }
+  
+  func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    if textField.text == "" {
+      textField.placeholder = "Type something"
+      return false
+    } else {
+      return true
+    }
+  }
+}
+
+// MARK: - WeatherManagerDelegate
+
+extension ClimaViewController: WeatherManagerDelegate {
+  
+  func didUpdateWeater(_ weather: WeatherModel) {
+    DispatchQueue.main.async {
+      self.temperatureLabel.text = weather.temperatureString
+      self.conditionImageView.image = UIImage(systemName: weather.condition, withConfiguration: UIImage.SymbolConfiguration(pointSize: 120))
+      self.cityLabel.text = weather.city
+    }
+    print(weather.city, weather.temperatureString)
+  }
+  
+  func didFailWithError(_ error: Error) {
+    print(error.localizedDescription)
+  }
+}
+
+extension ClimaViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    if let location = locations.last {
+      locationManager.stopUpdatingLocation()
+      let lat = location.coordinate.latitude
+      let lon = location.coordinate.longitude
+      weatherManager.fetchWeather(latitude: lat, longitude: lon)
+    }
+  }
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print(error.localizedDescription)
   }
 }
