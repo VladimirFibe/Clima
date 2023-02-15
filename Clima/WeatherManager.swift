@@ -1,10 +1,3 @@
-//
-//  WeatherManager.swift
-//  Clima
-//
-//  Created by Vladimir Fibe on 19.02.2022.
-//
-
 import Foundation
 import CoreLocation
 

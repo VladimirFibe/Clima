@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F26CCB027BFCC7600BC0A4D /* ClimaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */; };
 		1F26CCB427BFCC7800BC0A4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */; };
 		1F26CCB727BFCC7800BC0A4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */; };
 		1F26CCBE27BFCD7600BC0A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		1F26CCAC27BFCC7600BC0A4D /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaApp.swift; sourceTree = "<group>"; };
 		1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				1F26CCC327BFCE3300BC0A4D /* Info.plist */,
-				1F26CCAF27BFCC7600BC0A4D /* ClimaApp.swift */,
 				1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */,
 				1F26CCBF27BFCDB300BC0A4D /* SceneDelegate.swift */,
 				1F26CCC127BFCDC200BC0A4D /* ClimaViewController.swift */,
@@ -158,7 +155,6 @@
 				1F26CCC227BFCDC200BC0A4D /* ClimaViewController.swift in Sources */,
 				1FFD11AC27C0AA5B00C80DC3 /* WeatherManager.swift in Sources */,
 				1FFD11B027C16FD600C80DC3 /* WeatherModel.swift in Sources */,
-				1F26CCB027BFCC7600BC0A4D /* ClimaApp.swift in Sources */,
 				1FFD11AE27C10CB500C80DC3 /* Weather.swift in Sources */,
 				1F26CCC027BFCDB300BC0A4D /* SceneDelegate.swift in Sources */,
 			);

@@ -1,10 +1,3 @@
-//
-//  WeatherModel.swift
-//  Clima
-//
-//  Created by Vladimir Fibe on 20.02.2022.
-//
-
 import Foundation
 
 struct WeatherModel {

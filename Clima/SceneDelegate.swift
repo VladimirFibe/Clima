@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Clima
-//
-//  Created by Vladimir Fibe on 18.02.2022.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,14 +11,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window.makeKeyAndVisible()
     self.window = window
   }
-
-  func sceneDidDisconnect(_ scene: UIScene) { }
-
-  func sceneDidBecomeActive(_ scene: UIScene) { }
-
-  func sceneWillResignActive(_ scene: UIScene) { }
-
-  func sceneWillEnterForeground(_ scene: UIScene) { }
-
-  func sceneDidEnterBackground(_ scene: UIScene) { }
 }

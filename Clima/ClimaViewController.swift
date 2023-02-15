@@ -1,10 +1,3 @@
-//
-//  ClimaViewController.swift
-//  Clima
-//
-//  Created by Vladimir Fibe on 18.02.2022.
-//
-
 import UIKit
 import CoreLocation
 
@@ -13,7 +6,7 @@ class ClimaViewController: UIViewController {
   let locationManager = CLLocationManager()
   
   let backgroundView = UIImageView(image: UIImage(named: "background"))
-  let locationButton: UIButton = {
+  lazy var locationButton: UIButton = {
     let button = UIButton(type: .system)
     button.setImage( UIImage(systemName: "location.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 40)), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +16,7 @@ class ClimaViewController: UIViewController {
     return button
   }()
   
-  let searchButton: UIButton = {
+  lazy var searchButton: UIButton = {
     let button = UIButton(type: .system)
     button.setImage( UIImage(systemName: "magnifyingglass", withConfiguration: UIImage.SymbolConfiguration(pointSize: 40)), for: .normal)
     button.titleLabel?.font = .systemFont(ofSize: 15)
