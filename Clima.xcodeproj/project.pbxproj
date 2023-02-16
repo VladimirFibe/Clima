@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0253CF74299E6F4000B1D286 /* ClimaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0253CF73299E6F4000B1D286 /* ClimaView.swift */; };
 		1F26CCB427BFCC7800BC0A4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */; };
 		1F26CCB727BFCC7800BC0A4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */; };
 		1F26CCBE27BFCD7600BC0A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		02519695299D2E8E005544E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0253CF73299E6F4000B1D286 /* ClimaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaView.swift; sourceTree = "<group>"; };
 		1F26CCAC27BFCC7600BC0A4D /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26CCB327BFCC7800BC0A4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26CCB627BFCC7800BC0A4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				1F26CCBD27BFCD7500BC0A4D /* AppDelegate.swift */,
 				1F26CCBF27BFCDB300BC0A4D /* SceneDelegate.swift */,
 				1F26CCC127BFCDC200BC0A4D /* ClimaViewController.swift */,
+				0253CF73299E6F4000B1D286 /* ClimaView.swift */,
 				1FFD11AB27C0AA5B00C80DC3 /* WeatherManager.swift */,
 				1FFD11AD27C10CB500C80DC3 /* Weather.swift */,
 				1FFD11AF27C16FD600C80DC3 /* WeatherModel.swift */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0253CF74299E6F4000B1D286 /* ClimaView.swift in Sources */,
 				1F26CCBE27BFCD7600BC0A4D /* AppDelegate.swift in Sources */,
 				1F26CCC227BFCDC200BC0A4D /* ClimaViewController.swift in Sources */,
 				1FFD11AC27C0AA5B00C80DC3 /* WeatherManager.swift in Sources */,
